@@ -1,0 +1,59 @@
+
+<p>---UPPER CASE PIPE---</p>
+<ul>
+    <li *ngFor="let i of employee">{{i.name | uppercase}}</li>
+</ul>
+<p>---LOWER CASE PIPE---</p>
+<ul>
+    <li *ngFor="let i of employee">{{i.name | lowercase}}</li>
+</ul>
+<p>---TITLE CASE PIPE---</p>
+<ul>
+    <li *ngFor="let i of employee">{{i.name | titlecase}}</li>
+</ul>
+<p>---CURRENCY PIPE---</p>
+<ul>
+    <li *ngFor="let i of employee">{{i.Total | currency:'USD' }}</li>
+</ul>
+
+<p *ngFor="let a of intro">{{a | titlecase}}</p>
+
+
+
+<table class="table table-striped table-hover table-bordered" >
+    <thead class="table-dark">
+            <tr>
+                <th >ID</th>
+                <th>NAME</th>
+                <th>CITY</th>
+                <th >BASIC</th>
+                <th>BASIC-PERCENT</th>
+                <th>HRA</th>
+                <th>HRA-PERCENT</th>
+                <th>ALLOWANCE-PERCENT</th>
+                <th>ALLOWANCE</th>
+                <th>TOTAL</th>
+                
+            </tr>
+        
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of employee" >
+            <td >{{i.id}}</td>
+            <td>{{i.name | uppercase}}</td>
+            <td>{{i.city | uppercase}}</td>
+            <td class="basic">{{i.basic}}</td>
+            <td class="basic" >{{i.basic/i.Total |percent:'2.0-2' }}</td>
+            <td class="hra">{{i.HRA/i.Total |percent:'2.0-2'}}</td>
+            <td class="hra">{{i.HRA}}</td>
+            <td class="allowance">{{i.Allowance/i.Total |percent:'2.0-2'}}</td>
+            <td class="allowance">{{i.Allowance}}</td>
+            <td>{{i.Total}}</td>
+            
+            
+
+        </tr>
+    </tbody>
+</table>
+
+
