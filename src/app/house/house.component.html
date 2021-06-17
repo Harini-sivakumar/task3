@@ -24,21 +24,22 @@
 </main>
 <p>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
 
-<div style="margin:auto; width: 50%; border:3px solid green;">
-    <select [(ngModel)]="selectedvalue" >
-      <option *ngFor="let detail of student" [Value]="detail.id" >
-        {{detail.name}}
-        
-      </option>
-    </select>
-    
-<p ngIf="selectedvalue" >THE SELECTED VALUE IS {{selectedvalue}}</p>
-   
-  </div> 
 
 
+<div style="margin: auto; width: 8%; border: 3px solid green; padding:10px">
+  <select [(ngModel)]="selectedvalue">
+    <option *ngFor="let detail of student" [ngValue]="detail">
+      {{ detail.name }}
+    </option>
+  </select>
+  
 
-
+  <p *ngIf="selectedvalue">
+     ID : {{ selectedvalue.id }}, NAME : {{
+      selectedvalue.name
+    }}, GENDER : {{ selectedvalue.gender }}
+  </p>
+</div>
 
 
 

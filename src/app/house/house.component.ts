@@ -14,15 +14,16 @@ interface student {
 
 export class HouseComponent implements OnInit {
 
-  student:student[]=details;
-  selectedvalue:any={};
+student:student[]=details;
+  selectedvalue:any;
   
   
   constructor() { }
 
   ngOnInit(): void {
-    
+    console.log("1")
   }
 
+  
 
 }
