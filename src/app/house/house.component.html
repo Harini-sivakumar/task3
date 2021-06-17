@@ -10,22 +10,13 @@
         
     </thead>
     <tbody>
-        <tr *ngFor="let detail of student; let i = index " >
-            <td *ngIf="i%5 ==0" class="col1">{{detail.id}}</td>
-            <td *ngIf="i%5 ==1" class="col2">{{detail.id}}</td>
-            <td *ngIf="i%5 ==2" class="col3">{{detail.id}}</td>
-            <td *ngIf="i%5 ==3" class="col4">{{detail.id}}</td>
-            <td *ngIf="i%5 ==4" class="col5">{{detail.id}}</td>
-            <td *ngIf="i%5 ==4" class="col5">{{detail.name}}</td>
-            <td *ngIf="i%5 ==3" class="col4">{{detail.name}}</td>
-            <td *ngIf="i%5 ==2" class="col3">{{detail.name}}</td>
-            <td *ngIf="i%5 ==1" class="col2">{{detail.name}}</td>
-            <td *ngIf="i%5 ==0" class="col1">{{detail.name}}</td>
-            <td *ngIf="i%5 ==1" class="col2">{{detail.gender}}</td>
-            <td *ngIf="i%5 ==2" class="col3">{{detail.gender}}</td>
-            <td *ngIf="i%5 ==0" class="col1">{{detail.gender}}</td>
-            <td *ngIf="i%5 ==3" class="col4">{{detail.gender}}</td>
-            <td *ngIf="i%5 ==4" class="col5">{{detail.gender}}</td>
+        <tr *ngFor="let detail of student; let i = index "[ngClass]="{'col1': i%5==0, 'col2': i%5==1, 'col3': i%5==2,'col4': i%5==3,'col5': i%5==4}" >
+            <td >{{detail.id}}</td>
+            
+            <td>{{detail.name}}</td>
+            
+            <td>{{detail.gender}}</td>
+            
 
         </tr>
     </tbody>
@@ -34,16 +25,14 @@
 <p>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
 
 <div style="margin:auto; width: 50%; border:3px solid green;">
-    <select [(ngModel)]="selectedvalue">
-      <option *ngFor="let detail of student" [value]="detail.id" >
+    <select [(ngModel)]="selectedvalue" >
+      <option *ngFor="let detail of student" [Value]="detail.id" >
         {{detail.name}}
         
       </option>
     </select>
-  
-    <br>
-    selected value is {{selectedvalue}}
-    <br>
+    
+<p ngIf="selectedvalue" >THE SELECTED VALUE IS {{selectedvalue}}</p>
    
   </div> 
 

@@ -15,11 +15,7 @@ interface student {
 export class HouseComponent implements OnInit {
 
   student:student[]=details;
-  selectedvalue:any;
-  selectedid:any;
-  optionselected(event: any){
-     this.selectedid=event;
-  }
+  selectedvalue:any={};
   
   
   constructor() { }
@@ -27,6 +23,6 @@ export class HouseComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  
+
 
 }
